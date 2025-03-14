@@ -63,6 +63,7 @@ export var Time = React.createClass({
   timeMiddleChange: function(e){
     var timeMin = parseFloat(e.target.value);
     this.setState({timeMin: timeMin});
+    this.setState({timeLabels: time})
     var newFilter = this.computeFilter({timeMin: timeMin});
     this.props.setFilter(this.props.filterKey, newFilter);
   },
