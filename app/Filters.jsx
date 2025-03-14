@@ -60,6 +60,12 @@ export var Time = React.createClass({
     var newFilter = this.computeFilter({timeMin: timeMin});
     this.props.setFilter(this.props.filterKey, newFilter);
   },
+  timeMiddleChange: function(e){
+    var timeMin = parseFloat(e.target.value);
+    this.setState({timeMin: timeMin});
+    var newFilter = this.computeFilter({timeMin: timeMin});
+    this.props.setFilter(this.props.filterKey, newFilter);
+  },
   timeMaxChange: function(e){
     var timeMax = parseFloat(e.target.value);
     this.setState({timeMax: timeMax});
