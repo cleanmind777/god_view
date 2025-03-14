@@ -6,6 +6,7 @@ import {GoogleApiWrapper, Map} from 'google-maps-react';
 import {Scrollbars} from 'react-custom-scrollbars';
 import {Neighborhoods, Coords, MaxRows, Stats, HeatMap} from './Controls.jsx';
 import {Time, Day} from './Filters.jsx';
+import { locale } from 'yargs';
 
 var Container = React.createClass({
   getInitialState: function() {
@@ -21,6 +22,15 @@ var Container = React.createClass({
       totalRows: 10000,
       dragging: false
     };
+  },
+  xfilter : function(){
+    return {
+      xpoint : [],
+      polygon : [],
+      lome : true,
+      map: null,
+      onMapReady : []
+    }
   },
   render: function() {
     const style = {
