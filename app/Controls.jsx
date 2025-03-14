@@ -16,7 +16,20 @@ var filteredTripsPropType = React.PropTypes.arrayOf(
     time: React.PropTypes.instanceOf(moment)
   })
 );
-
+var SeletedTripsPropType = React.PropTypes.arrayOf(
+  React.PropTypes.shape({
+    base: React.PropTypes.string,
+    dropoff: React.PropTypes.shape({
+      type: React.PropTypes.string,
+      coordinates: React.PropTypes.arrayOf(React.PropTypes.number)
+    }),
+    pickup: React.PropTypes.shape({
+      type: React.PropTypes.string,
+      coordinates: React.PropTypes.arrayOf(React.PropTypes.number)
+    }),
+    time: React.PropTypes.instanceOf(moment)
+  })
+);
 //Shows a range of pre-selected neighborhoods
 export var Neighborhoods = React.createClass({
   propTypes: {
