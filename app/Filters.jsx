@@ -84,9 +84,11 @@ export var Time = React.createClass({
       var hours = val.time.hour();
       if (timeMin <= timeMax){
         return hours >= timeMin && hours <= timeMax;
+        var x = 1
       }
       else{
         return hours >= timeMin || hours <= timeMax;
+        var x = 2
       }
     };
   }
